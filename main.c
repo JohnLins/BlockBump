@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Vector3 rotateCube(Vector3 cubePosition)
-{
-    //Make this function rotate cube
-    return cubePosition;
-}
-
 
 int main(void)
 {
@@ -36,10 +30,8 @@ int main(void)
     Vector3 cubePosition = { 0.0f, 0.0f, 0.0f };
     Vector3 foodPosition = { 0.0f, 0.0f, -720.0f };
     float foodSpeed = 2.5f;
-   // Vector3 foodPosition = { rand() % screenWidth, rand() % screenHeight, rand() % screenHeight };
-   // Vector3 foodPositionRA = { rand() % screenWidth + 4, rand() % screenHeight + 4, rand() % screenHeight + 4 };
 
-    SetCameraMode(camera, CAMERA_PERSPECTIVE); // Set a free camera mode
+    SetCameraMode(camera, CAMERA_PERSPECTIVE); 
     
 
     SetTargetFPS(60);   
@@ -70,7 +62,7 @@ int main(void)
         if (IsKeyDown(KEY_E) || IsMouseButtonDown(0)) cubePosition.z -= speed;
         
         
-        //NEEDS FIXING
+        
         float collision1 = cubeSize/2 + foodSize/2;
         float collision2 = cubeSize/-2 + foodSize/-2;
         if (
@@ -84,14 +76,7 @@ int main(void)
             cubePosition.z - foodPosition.z <= collision1 && 
             cubePosition.z - foodPosition.z >=  collision2
             ){
-            
-            /*cubePosition.y - foodPosition.y <= cubesize/2 &&
-            cubePosition.y - foodPosition.y >= cubesize/2 &&
-            
-            cubePosition.z - foodPosition.z <= cubesize/2 &&
-            cubePosition.z - foodPosition.z >= cubesize/2*/
-            
-                    printf("Touvhed");  
+                    printf("Touched ");  
                     foodCollected += 1; 
                     foodPosition.z = -320.0f;
                     cubeSize += 6.0f;
@@ -99,18 +84,7 @@ int main(void)
                     
                     foodPosition.x = rand() % 120;
                     foodPosition.y = rand() % 120;
-                    //camera.position.z += 30.0f;
-                    //cubePosition.y += 110.0f;
-
-            //ballPosition.x = screenWidth/2;
-           //ballPosition.y = screenHeight/2;
-           
-                  //  foodPosition.x += 5.0f; //rand() % screenWidth;
-                  // foodPosition.y += 5.0f; //rand() % screenHeight;  
-                  // foodPosition.z += 5.0f; //rand() % screenHeight;
                 }
-        
-        
         
         
         BeginDrawing();
@@ -122,40 +96,13 @@ int main(void)
                 cubeSize += 0.005;
                 DrawCube(cubePosition, cubeSize, cubeSize, cubeSize, RED);
                 
-               // DrawCircle3D(foodPosition, 20.0f, foodPositionRA, 20.0f, BLACK);
-                
-                
                 DrawCube(foodPosition, foodSize, foodSize, foodSize, BLUE);
                 
                 
-                
-                
-                
-                
-        
-        
-                
-                /*
-                Vector3 cubePosition2 = { 1.0f, 2.0f, 2.0f };
-                DrawCube(cubePosition2, h, h, h, BLUE);*/
-                
-                
-               // DrawCubeWires(cubePosition, 2.0f, 2.0f, 2.0f, MAROON);
-
-                //DrawGrid(10, 1.0f);
-
+           
             EndMode3D();
 
-          //  DrawRectangle( 10, 10, 320, 133, Fade(SKYBLUE, 0.5f));
-            
-          //  DrawRectangleLines( 10, 10, 320, 133, BLUE);
-
-           /* DrawText("Free camera default controls:", 20, 20, 10, BLACK);
-            DrawText("- Mouse Wheel to Zoom in-out", 40, 40, 10, DARKGRAY);
-            DrawText("- Mouse Wheel Pressed to Pan", 40, 60, 10, DARKGRAY);
-            DrawText("- Alt + Mouse Wheel Pressed to Rotate", 40, 80, 10, DARKGRAY);
-            DrawText("- Alt + Ctrl + Mouse Wheel Pressed for Smooth Zoom", 40, 100, 10, DARKGRAY);
-            DrawText("- Z to zoom to (0, 0, 0)", 40, 120, 10, DARKGRAY);*/
+   
 
         EndDrawing();
     }
