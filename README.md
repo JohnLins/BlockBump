@@ -3,7 +3,4 @@ Bump the Blue Block and you get rewarded by increasing in size... But you have n
 
 <br/>
 
-<video controls autoplay>
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img src="video.gif" />
