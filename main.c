@@ -2,26 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Vector3 rotateCube(Vector3 cubePosition)
-{
-    //Make this function rotate cube
-    return cubePosition;
-}
-/*
-struct agent {
-    position
-    size
-    speed
-}
-
-struct food {
-    position
-    size
-    speed
-}
-*/
-
-
 int main(void)
 {
     time_t t;
@@ -77,7 +57,6 @@ int main(void)
         if (IsKeyDown(KEY_E) || IsMouseButtonDown(0)) agentPosition.z -= speed;
         
         
-        //NEEDS FIXING
         float collision1 = agentSize/2 + foodSize/2;
         float collision2 = agentSize/-2 + foodSize/-2;
         if (
