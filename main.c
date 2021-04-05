@@ -71,7 +71,7 @@ int main(void)
             agentPosition.z - foodPosition.z >=  collision2
             ){
             
-                    printf("Touvhed");  
+                    printf("Touched");  
                     foodCollected += 1; 
                     foodPosition.z = -750.0f;
                     agentSize += 6.0f;
